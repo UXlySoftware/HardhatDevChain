@@ -16,3 +16,7 @@ docker build -t devchain .
 ```sh
 docker run -d --rm -p 8545:8545 --name devchain devchain
 ```
+
+## Contracts
+
+The deploy script in [`entrypoint.sh`](entrypoint.sh) will use ignition to deploy a [Lock](./contracts/Lock.sol) contract at `0x5FbDB2315678afecb367f032d93F642f64180aa3`.
