@@ -1,0 +1,28 @@
+{
+  "name": "hardhatdevchain",
+  "version": "1.0.0",
+  "description": "Local blockchain network service for developement",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UXlySoftware/HardhatDevChain.git"
+  },
+  "keywords": [
+    "EVM",
+    "Hardhat",
+    "UXly"
+  ],
+  "author": "Todd Chapman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UXlySoftware/HardhatDevChain/issues"
+  },
+  "homepage": "https://github.com/UXlySoftware/HardhatDevChain#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.18"
+  }
+}
