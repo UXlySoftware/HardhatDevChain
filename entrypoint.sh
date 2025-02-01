@@ -7,7 +7,7 @@ tmux new -d -s hardhat npx hardhat node
 sleep 3
 
 # deploy the scripts to the running instance
-npx hardhat ignition deploy ./ignition/modules/Lock.ts --network localhost
+npx hardhat ignition deploy ./ignition/modules/TestToken.ts --network localhost
 
 # keeps main thread of execution from exiting
 tail -f /dev/null
