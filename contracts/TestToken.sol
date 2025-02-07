@@ -11,7 +11,34 @@ contract TestToken is ERC20, Ownable {
         Ownable(initialOwner)
     {}
 
+    struct Foo {
+        uint128 a;
+        string b;
+        bool[] c;
+    }
+
+    struct Bar {
+        Foo[] d;
+    }
+
+    event FooBar(
+        uint128 a
+    );
+
     function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
     }
+
+    function mintBatch(address[] memory to, uint256[] memory amounts) public onlyOwner {
+        require(to.length == amounts.length, "Arrays must have the same length");
+
+        for (uint256 i = 0; i < to.length; i++) {
+            _mint(to[i], amounts[i]);
+        }
+    }
+
+    function callFooBar(Foo calldata foo, Bar calldata bar) public {
+        emit FooBar(foo.a);
+    }
+
 }
