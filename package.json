@@ -4,6 +4,7 @@
   "description": "Local blockchain network service for developement",
   "main": "index.js",
   "scripts": {
+    "dockerize": "docker build -t uxly/devchain:0.6.0 .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,5 +28,6 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.2.0"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
