@@ -9,7 +9,7 @@ const TokenModule = buildModule("TestTokenModule", (m) => {
   const receiver_address = process.env.RECEIVER_ADDRESS;
   console.log("Target owner address:", owner);
 
-  const send = m.send("SendingEth", receiver_address, 1_000_000n);
+  const send = m.send("SendingEth", receiver_address, 1_000_000_000_000_000_000n);
 
   const token = m.contract("TestToken", [owner]);
 
