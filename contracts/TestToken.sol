@@ -11,6 +11,11 @@ contract TestToken is ERC20, Ownable {
         Ownable(initialOwner)
     {}
 
+    uint128[] public normalArray;
+    uint128[][] public nestedArray;
+    uint128[2] public fixedArray;
+    uint128[][2] public nestedFixedArray;
+
     struct Foo {
         uint128 fooUint128;
         string fooString;
@@ -21,11 +26,17 @@ contract TestToken is ERC20, Ownable {
         Foo[] barFooArray;
     }
 
-    event FooBar(
-        uint128 a
+    event CalledFooBar(
+        uint128 a,
+        uint128 b
     );
 
-    function mint(address to, uint256 amount) public onlyOwner {
+    event CalledCrazyArray(
+        uint128 a,
+        uint128 b
+    );
+
+    function mint(address to, uint256 amount) public {
         _mint(to, amount);
     }
 
@@ -38,7 +49,11 @@ contract TestToken is ERC20, Ownable {
     }
 
     function callFooBar(Foo calldata foo, Bar calldata bar) public {
-        emit FooBar(foo.fooUint128);
+        emit CalledFooBar(foo.fooUint128, bar.barFooArray[0].fooUint128);
+    }
+
+    function crazyArray(uint128[][2] memory thing) external {
+        emit CalledCrazyArray(thing[0][0], thing[1][1]);
     }
 
 }

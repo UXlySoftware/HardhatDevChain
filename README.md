@@ -33,3 +33,21 @@ The hardhat network is running in a tmux session named `hardhat`. You can see th
 ```sh
 docker exec devchain tmux capture-pane -t hardhat -p
 ```
+
+## Testnet Addresses
+
+The TestToken contract has been deployed to public testnets. 
+
+```
+npx hardhat set var INFURA_API_KEY
+npx hardhat set var PRIVATE_KEY
+npx hardhat ignition deploy ./ignition/modules/TestnetDeploy.ts --network <testnetwork>
+```
+
+### Fuji
+
+Deployed at [`0x42f395431D0952269b50860ba24BeaB1442D19F0`](https://testnet.snowtrace.io/token/0x42f395431D0952269b50860ba24BeaB1442D19F0?chainid=43113)
+
+### Sepolia
+
+Deployed at [`0x17Ed2c50596E1C74175F905918dEd2d2042b87f3`](https://sepolia.etherscan.io/address/0x17Ed2c50596E1C74175F905918dEd2d2042b87f3)
