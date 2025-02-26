@@ -41,7 +41,9 @@ The TestToken contract has been deployed to public testnets.
 ```
 npx hardhat set var INFURA_API_KEY
 npx hardhat set var PRIVATE_KEY
+npx hardhat set var ETHERSCAN_API_KEY
 npx hardhat ignition deploy ./ignition/modules/TestnetDeploy.ts --network <testnetwork>
+npx hardhat ignition verify chain-<chainId> --include-unrelated-contracts
 ```
 
 ### Fuji
