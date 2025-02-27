@@ -7,7 +7,10 @@ tmux new -d -s hardhat npx hardhat node
 sleep 3
 
 # deploy the scripts to the running instance
-npx hardhat ignition deploy ./ignition/modules/TestToken.ts --network localhost
+while ! npx hardhat ignition deploy ./ignition/modules/TestToken.ts --network localhost; do
+  echo "Deployment failed, retrying in 3 seconds..."
+  sleep 3
+done
 
 # keeps main thread of execution from exiting
 tail -f /dev/null
