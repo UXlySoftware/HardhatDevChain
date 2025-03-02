@@ -4,8 +4,8 @@
   "description": "Local blockchain network service for developement",
   "main": "index.js",
   "scripts": {
-    "dockerize": "docker build -t uxly/devchain:0.6.0 .",
-    "docker-push": "docker push uxly/devchain:0.6.0",
+    "dockerize": "docker build -t uxly/devchain:0.8.0 .",
+    "docker-push": "docker push uxly/devchain:0.8.0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
